@@ -47,8 +47,9 @@ const Home = () => {
 
   const taskHandler = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    
     try {
+      setLoading(true);
       const { data } = await axios.post(
         `${server}/task/new`,
         {

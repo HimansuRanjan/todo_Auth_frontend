@@ -8,6 +8,7 @@ import { Toaster } from "react-hot-toast";
 import { useContext, useEffect } from "react";
 import { Context, server } from "./main";
 import axios from "axios";
+import First from "./pages/First";
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/first" element={<First />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

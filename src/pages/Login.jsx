@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import axios from 'axios';
 import { server } from "../main";
@@ -9,8 +9,6 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const {isAuthenticated, setIsAuthenticated, loading, setLoading} = useContext(Context);
-
-  if(isAuthenticated) return <Navigate to={"/"}/>;
 
   const submitHandler = async (e)=>{
     setLoading(true);
@@ -41,6 +39,8 @@ const Login = () => {
     
   };
 
+  if(isAuthenticated) return <Navigate to={"/"}/>;
+  
   return (
     <div className='login'>
       <section>
