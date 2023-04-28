@@ -37,11 +37,19 @@ const Header = () => {
             <h2>TODO APP.</h2>
         </div>
         <article>
-            <Link to={'/'}>Home</Link>
-            <Link to={'/profile'}>Profile</Link>
             {
-              isAuthenticated ? <button disabled={loading} className='btn' onClick={logoutHandler}>LogOut</button> :
-              <Link to={'/login'}>Login</Link>
+              isAuthenticated 
+              ?
+              <> 
+                <Link to={'/'}>Home</Link>
+                <Link to={'/profile'}>Profile</Link>
+                <button disabled={loading} className='btn' onClick={logoutHandler}>LogOut</button> 
+              </>
+              :
+              <>
+                <Link to={'/login'}>Login</Link>
+                <Link to={'/register'}>Sign Up</Link>
+              </>
             }
             
             
